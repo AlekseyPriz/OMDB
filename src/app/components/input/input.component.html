@@ -1,0 +1,14 @@
+<form class="example-form"  #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="Алексей, введите название фильма"
+      type="text"
+      id="filmName"
+      name="filmName"
+      ngModel
+      value=""
+    >
+  </mat-form-field>
+  <button mat-raised-button color="primary" [disabled]="!f.value.filmName">Найти</button>
+</form>

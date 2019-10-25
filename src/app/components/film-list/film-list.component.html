@@ -1,3 +1,7 @@
 <mat-list>
-  <mat-list-item *ngFor="let film of films"> {{film.Title}} </mat-list-item>
+  <mat-list-item *ngFor="let film of films">
+    <a [routerLink]="['/film', film.imdbID]">
+      {{film.Title}}
+    </a>
+  </mat-list-item>
 </mat-list>

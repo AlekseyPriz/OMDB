@@ -6,9 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FilmServiceService {
 
+  private apiKey = '23bbbb62';
+
   constructor(private http: HttpClient) { }
 
-  serchFilms (filmName) {
-    return this.http.get(`http://www.omdbapi.com/?t=${filmName}&apikey=23bbbb62`);
+  searchFilms(filmName) {
+    return this.http.get(`http://www.omdbapi.com/?t=${filmName}&apikey=${this.apiKey}`);
+  }
+
+  getFilmById(filmId) {
+    return this.http.get(`http://www.omdbapi.com/?i=${filmId}&apikey=${this.apiKey}`);
   }
 }

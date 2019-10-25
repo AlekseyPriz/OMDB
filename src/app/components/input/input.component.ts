@@ -10,9 +10,6 @@ export class InputComponent implements OnInit {
 
   @Output() getFilm = new EventEmitter<any>();
 
-
-
-
   ngOnInit() {
   }
 

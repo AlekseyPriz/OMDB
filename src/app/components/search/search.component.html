@@ -1,0 +1,5 @@
+<div class="mat-app-background basic-container">
+  <app-input (getFilm)="getFilm($event)"></app-input>
+  <span *ngIf="notFound">Фильм не найден </span>
+  <app-film-list [films]="films"></app-film-list>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FilmServiceService} from '../../services/film-service.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search',
@@ -22,9 +23,9 @@ export class SearchComponent implements OnInit {
     this.notFound = false;
 
     const subscription =  this.filmServiceService.searchFilms(filmName)
-      .subscribe((responce) => {
-        if (responce.Response ===  "False") {this.notFound = true};
-        this.films.push(responce);
+      .subscribe((response: any) => {
+        if (response.Error === 'Movie not found!') {this.notFound = true};
+        this.films.push(response);
         subscription.unsubscribe();
         }
       );
